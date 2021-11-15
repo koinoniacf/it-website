@@ -25,5 +25,12 @@
             "crl": "Koinonia-KCFAD01-CA(1).crl",
             "delta": "Koinonia-KCFAD01-CA(1)+.crl"
         }
+    },
+    "chain": {
+        "title": "Cerficiate Chain",
+        "description": "This is a legacy certificate authority and will no longer issue new certificates. Some services may still require you to trust this authority. In most cases, you will not need to add this certificate.",
+        "files": {
+            "download": "pki.zip"
+        }
     }
 }
