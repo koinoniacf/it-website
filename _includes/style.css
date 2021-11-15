@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+    max-width: 70%;
+    min-width: 50vh;
+    margin: auto;
+    background-color: white;
+    background-image: url("/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+div.centre-vertical {
+    margin: 2em 0;
+    min-height: 200px;
+}
+
+div.title>h2 {
+    font-weight: 100;
+    font-size: large;
+}
+
+div.title>h1,
+div.title>h2 {
+    margin: 0;
+}
+
+div.downloads>h3{
+    margin-top: 2em;
+    margin-bottom: 0em;
+}
+div.downloads>p {
+    margin-top: 0.5em;
+}
+
+a.button1 {
+    display: inline-block;
+    padding: 0.4em 1em;
+    margin: 0 0.25em 0.25em 0;
+    border-radius: 0.15em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #25834F;
+    transition: all 0.1s;
+}
+
+a.button1:hover {
+    background-color: #2D9F60;
+}
+
+@media all and (max-width:30em) {
+    a.button1 {
+        display: block;
+        margin: 0.4em auto;
+    }
+}

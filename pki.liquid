@@ -1,0 +1,27 @@
+---
+layout: layout.liquid
+title: Public Key Infrastructure
+description: You can find all information needed to trust Koinonia's public key infrastructure here.
+---
+<div class="downloads">
+    {% for certificate in pki %}
+    <h3>{{ certificate[1].title }}</h3>
+    <p>{{ certificate[1].description }}</p>
+    <div class="action centre">
+        {% assign type = certificate[1].files.certificate %}
+        {% if type != blank %}
+        <a class="button1" href="/{{type}}">Certificate</a>
+        {% endif %}
+
+        {% assign type = certificate[1].files.crl %}
+        {% if type != blank %}
+        <a class="button1" href="/{{type}}">CRL</a>
+        {% endif %}
+
+        {% assign type = certificate[1].files.delta %}
+        {% if type != blank %}
+        <a class="button1" href="/{{type}}">Delta</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
