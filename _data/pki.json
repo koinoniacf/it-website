@@ -1,0 +1,29 @@
+{
+    "root": {
+        "title": "Root Authority",
+        "description": "Each machine that trusts Koinonia's PKI must have the root certificate.",
+        "prefix": "Koinonia Root Authority",
+        "files": {
+            "certificate": "Koinonia Root Authority.crt",
+            "crl": "Koinonia Root Authority.crl"
+        }
+    },
+    "issuing1": {
+        "title": "Issuing Authority 1",
+        "description": "The authority is currently issuing certificates. You implicitly trust this certificate when adding the root certificate. In most cases, you will not need to add this certificate.",
+        "files": {
+            "certificate": "Koinonia Issuing Authority 1.crt",
+            "crl": "Koinonia Issuing Authority 1.crl",
+            "delta": "Koinonia Issuing Authority 1+.crl"
+        }
+    },
+    "legacy": {
+        "title": "Koinonia-KCFAD01-CA",
+        "description": "This is a legacy certificate authority and will no longer issue new certificates. Some services may still require you to trust this authority. In most cases, you will not need to add this certificate.",
+        "files": {
+            "certificate": "Koinonia-KCFAD01-CA(1).crt",
+            "crl": "Koinonia-KCFAD01-CA(1).crl",
+            "delta": "Koinonia-KCFAD01-CA(1)+.crl"
+        }
+    }
+}
