@@ -3,8 +3,9 @@ const { minify } = require("terser"); // minify JS
 const htmlmin = require("html-minifier"); // minify HTML
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addPassthroughCopy("pki");
+    eleventyConfig.addPassthroughCopy("img");
     eleventyConfig.addPassthroughCopy({"assets": "/"});
-    eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addTransform("minify-output", async function(content, outputPath) {
         if (outputPath && outputPath.endsWith(".html")) {
             let minified = htmlmin.minify(content, {
