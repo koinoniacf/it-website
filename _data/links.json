@@ -1,0 +1,37 @@
+{
+    "Xibo": {
+        "title": "Xibo",
+        "description": "Digital signage",
+        "url": "https://xibo.in.kcf.org"
+    },
+    "VPN": {
+        "title": "VPN Download",
+        "description": "",
+        "url": "/Koinonia_VPN.zip"
+    },
+    "Spiceworks": {
+        "title": "Spiceworks Inventory",
+        "description": "",
+        "url": "https://apps.spiceworks.com/tools/device-inventory/"
+    },
+    "Password": {
+        "title": "Password Change",
+        "description": "",
+        "url": "https://password-koinoniacf.msappproxy.net/"
+    },
+    "PKI": {
+        "title": "Public Key Infrastructure",
+        "description": "",
+        "url": "/pki"
+    },
+    "Short Link": {
+        "title": "Short Link",
+        "description": "",
+        "url": "short"
+    },
+    "key": {
+        "title": "title",
+        "description": "description",
+        "url": "url"
+    }
+}
