@@ -10,18 +10,48 @@ description: You can find all information needed to trust Koinonia's public key 
     <div class="action centre">
         {% assign type = certificate[1].files.certificate %}
         {% if type != blank %}
-        <a class="button1" href="/{{type}}">Certificate</a>
+        <a class="button1" href="{{type}}">Certificate</a>
         {% endif %}
 
         {% assign type = certificate[1].files.crl %}
         {% if type != blank %}
-        <a class="button1" href="/{{type}}">CRL</a>
+        <a class="button1" href="{{type}}">CRL</a>
         {% endif %}
 
         {% assign type = certificate[1].files.delta %}
         {% if type != blank %}
-        <a class="button1" href="/{{type}}">Delta</a>
+        <a class="button1" href="{{type}}">Delta</a>
+        {% endif %}
+
+        {% assign type = certificate[1].files.download %}
+        {% if type != blank %}
+        <a class="button1" href="{{type}}">Download</a>
         {% endif %}
     </div>
     {% endfor %}
+    <h3>Policy Statement</h3>
+    <p>This Public Key Infrastructure (the "Service") is made available to you by Koinonia Christian Fellowship, herein
+        referred to as "we" or "us".</p>
+    <p>By using the Service, you are bound to all the terms listed on this page. If you, at any time, are unwilling or
+        unable to comply with any of these terms, you must cease to use the Service.</p>
+    <p>You will not act in a way that could be considered unlawful nor will you do anything to encourage others to act
+        in ways that could be considered unlawful.</p>
+    <p> You will not engage in any activities that are harassing, defamatory, threatening, obscene, abusive, racist,
+        sexist, offensive or otherwise objectionable or inappropriate.</p>
+    <p> You will not act in a way that could affect others' use of the Service, including but not limited to the
+        uploading or downloading large files.</p>
+    <p> You agree to indemnify us against any claims, demands, actions, liabilities, costs, losses, damages or expenses
+        you incur with relation to the Service.</p>
+    <p> You agree to be responsible to use for any claims, demands, actions, liabilities, costs, losses, damages or
+        expenses we incur as a result of you breaching this agreement.</p>
+    <p> You acknowledge that the Service is made available to you without warranties of any kind, either expressed or
+        implied. We do not authorize anyone to make a warranty of any kind on our behalf.</p>
+    <p> We reserve the right to make the Service unavailable or unusable, either for you or for all users, at any time
+        and for any reason. We are under no obligation to issue explanation or notification of these actions.
+    <p> All personal information submitted while using the Service will be governed by our Privacy Policy.</p>
+    <p> We reserve to modify this agreement whenever and however we see fit. By continuing to use the Service, you agree
+        to be bound by any changes we make. While we will make an effort to make you aware of these changes, we are
+        under no obligation to do so.</p>
+    <p> Should any provision made in these terms be determined unlawful or void for any reason that provision is
+        severable form this agreement and will not affect the validity of any remaining provisions.</p>
 </div>

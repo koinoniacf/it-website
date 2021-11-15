@@ -1,37 +1,31 @@
 {
-    "Xibo": {
-        "title": "Xibo",
-        "description": "Digital signage",
-        "url": "https://xibo.in.kcf.org"
+    "Microsoft365": {
+        "title": "Microsoft 365",
+        "url": "https://myapps.microsoft.com/kcf.org"
+    },
+    "Microsoft Teams": {
+        "title": "Microsoft Teams",
+        "url": "https://teams.microsoft.com/?tenantId=c8b2b4b5-9280-497a-9de4-4ad8f950bcba"
+    },
+    "Password Reset": {
+        "title": "Password Reset",
+        "url": "https://passwordreset.microsoftonline.com/?whr=kcf.org"
+    },
+    "MFA Setup": {
+        "title": "MFA Setup",
+        "url": "https://mysignins.microsoft.com/security-info?tenant=c8b2b4b5-9280-497a-9de4-4ad8f950bcba"
+    },
+    "Google Workspace": {
+        "title": "Google Workspace",
+        "url": "https://workspace.google.com/dashboard"
     },
     "VPN": {
         "title": "VPN Download",
-        "description": "",
         "url": "/Koinonia_VPN.zip"
-    },
-    "Spiceworks": {
-        "title": "Spiceworks Inventory",
-        "description": "",
-        "url": "https://apps.spiceworks.com/tools/device-inventory/"
-    },
-    "Password": {
-        "title": "Password Change",
-        "description": "",
-        "url": "https://password-koinoniacf.msappproxy.net/"
     },
     "PKI": {
         "title": "Public Key Infrastructure",
         "description": "",
         "url": "/pki"
-    },
-    "Short Link": {
-        "title": "Short Link",
-        "description": "",
-        "url": "short"
-    },
-    "key": {
-        "title": "title",
-        "description": "description",
-        "url": "url"
     }
 }
