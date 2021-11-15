@@ -1,0 +1,14 @@
+---
+layout: layout.liquid
+title: Web Resources
+description: Here you will find links to various web resources.
+---
+<div class="downloads">
+    <h3></h3>
+    {% for link in links %}
+    <div class="action centre">
+        {% assign type = link[1].description %}
+        <a class="button1" href="{{link[1].url}}"><span class="bold">{{ link[1].title }}</span>{% if type != blank %} {{ link[1].description }}{% endif %}</a>
+    </div>
+    {% endfor %}
+</div>
