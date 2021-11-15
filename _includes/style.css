@@ -32,6 +32,8 @@ div.downloads>p {
     margin-top: 0.5em;
 }
 
+.bold {font-weight: bolder;}
+
 a.button1 {
     display: inline-block;
     padding: 0.4em 1em;
