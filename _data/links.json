@@ -23,6 +23,10 @@
         "title": "VPN Download",
         "url": "/Koinonia_VPN.zip"
     },
+    "Short URL": {
+        "title": "Short Link Creator",
+        "url": "/shortlink/"
+    },
     "PKI": {
         "title": "Public Key Infrastructure",
         "description": "",
