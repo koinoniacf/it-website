@@ -6,7 +6,7 @@
     "build": "eleventy",
     "dev": "eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "functions": "npx wrangler pages dev _site"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "html-minifier": "^4.0.0",
     "terser": "^5.9.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "wrangler": "0.0.0-beta.6"
+  },
   "description": ""
 }
