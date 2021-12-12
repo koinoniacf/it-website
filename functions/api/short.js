@@ -1,4 +1,4 @@
-export async function onRequest(context) {
+export async function onRequestGet(context) {
     // Contents of context object
     const {
       request, // same as existing Worker API
@@ -9,10 +9,11 @@ export async function onRequest(context) {
       data, // arbitrary space for passing data between middlewares
     } = context;
     try {
-      console.log(RebrandlyApiKey)
-      console.log(RebrandlyWorkspace)
-      console.log("hello")
-        return new Response(RebrandlyApiKey);
+      console.log(env)
+      var respond = respond + "env: " + env + "\n"
+      var respond = respond + "env.: " + env.RebrandlyWorkspace + "\n"
+      //var respond = respond + "test-key: " + (await env.tasks.get("test-key")) + "\n"
+        return new Response(respond);
     } catch (error) {
       console.log(error)
       return new Response(error);
