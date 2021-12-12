@@ -3,9 +3,11 @@ const { minify } = require("terser"); // minify JS
 const htmlmin = require("html-minifier"); // minify HTML
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setBrowserSyncConfig({
+        ui: false
+      });
     eleventyConfig.addPassthroughCopy("pki");
     eleventyConfig.addPassthroughCopy("img");
-    eleventyConfig.addPassthroughCopy("functions");
     eleventyConfig.addPassthroughCopy({"assets": "/"});
     eleventyConfig.addTransform("minify-output", async function(content, outputPath) {
         if (outputPath && outputPath.endsWith(".html")) {
