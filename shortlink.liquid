@@ -1,0 +1,46 @@
+---
+layout: layout.liquid
+title: Short Link Creator
+description: You can use this page to create a short URL using Koinonia's URL shortening service.
+---
+<BR><BR>
+<div>
+  <form id="ShortLink-Form">
+    <div>
+      <label for="destination">Long URL</label>
+      <input id="destination" name="destination" type="url" placeholder="https://" value="" required maxlength="1000">
+    </div>
+    <div>
+      <label for="slashtag">Tag</label>
+      <input id="slashtag" name="slashtag" minlength="2" maxlength="40">
+    </div>
+    <div>
+      <label for="title">Title</label>
+      <input id="title" name="title" minlength="3" maxlength="255">
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <input id="description" name="description" minlength="3" maxlength="1989">
+    </div>
+    <div>
+      <fieldset id="domain" data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <legend>Domain</legend>
+        <label for="domain-koin.onl">koin.onl</label>
+        <input id="domain-koin.onl" name="domain" type="radio" value="koin.onl" checked="checked">
+        <label for="domain-s.kcf.org">s.kcf.org</label>
+        <input id="domain-s.kcf.org" name="domain" type="radio" value="s.kcf.org">
+        <label for="domain-s.kcf.life">s.kcf.life</label>
+        <input id="domain-s.kcf.life" name="domain" type="radio" value="s.kcf.life">
+      </fieldset>
+    </div>
+    <div>
+      <label for="ShortUrl">Short URL </label>
+      <input id="ShortUrl" name="ShortUrl" type="text" placeholder="Click submit to see your link." readonly>
+      <a class="copy-btn ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all" id="ShortUrlCopy"
+        data-clipboard-target="#ShortUrl" href="#">Copy</a>
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
