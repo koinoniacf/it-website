@@ -1,12 +1,13 @@
 {
-  "name": "koinonia-pki-web",
+  "name": "koinonia-it-web",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": ".eleventy.js",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx wrangler pages dev --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY -- eleventy --serve",
+    "eleventy": "eleventy --serve",
+    "wrangler": "npx wrangler pages dev _site --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
     "html-minifier": "^4.0.0",
     "terser": "^5.9.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "wrangler": "0.0.0-beta.6"
+  },
   "description": ""
 }
