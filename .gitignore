@@ -13,3 +13,6 @@ _site
 
 # environment variables file
 .env
+
+#Exclude local preferences and commands.
+.vscode/
