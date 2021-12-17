@@ -19,7 +19,7 @@ async function short(event) {
     requestHeaders.append("X-My-Request-Header", "jPgJCdVrF6VK192Ey4hH")
     
     //submit request
-    let response = await (await fetch("http://127.0.0.1:8788/apishort", {
+    let response = await (await fetch("/api/short", {
         headers: requestHeaders,
         method: "POST",
         body: JSON.stringify({
