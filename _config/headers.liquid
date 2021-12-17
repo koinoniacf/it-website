@@ -5,6 +5,9 @@ layout: null
 /shortlink/
   Content-Security-Policy: default-src 'none' ; connect-src 'self' https://cloudflareinsights.com ; img-src 'self' ; style-src 'self' ; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js;
 
+/assets/script.js
+  Content-Security-Policy: default-src 'none' ; connect-src 'self' https://cloudflareinsights.com ; img-src 'self' ; style-src 'self' ; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js;
+
 /*
   Access-Control-Allow-Origin: *
   Content-Security-Policy: default-src 'none' ; connect-src https://cloudflareinsights.com; img-src 'self' ; style-src 'self' ; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js;
@@ -15,7 +18,10 @@ layout: null
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
 
-/pki/* /assets/*
+/pki/* 
+  X-Robots-Tag: none, nosnippet, noarchive
+
+/assets/*
   X-Robots-Tag: none, nosnippet, noarchive
 
 https://:project.pages.dev/*
