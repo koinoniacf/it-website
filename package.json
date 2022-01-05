@@ -7,7 +7,8 @@
     "dev": "npx wrangler pages dev --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY -- eleventy --serve",
     "eleventy": "eleventy --serve",
     "wrangler": "npx wrangler pages dev _site --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun"
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun",
+    "clean": "rimraf _site"
   },
   "repository": {
     "type": "git",
