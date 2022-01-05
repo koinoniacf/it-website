@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
       });
     eleventyConfig.addPassthroughCopy("pki");
     eleventyConfig.addPassthroughCopy("img");
+    eleventyConfig.addPassthroughCopy({"images/**/*": "/img"});
     eleventyConfig.addPassthroughCopy({"assets": "/"});
     eleventyConfig.addTransform("minify-output", async function(content, outputPath) {
         if (outputPath && outputPath.endsWith(".html")) {
