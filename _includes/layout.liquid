@@ -24,19 +24,31 @@
     <meta property="og:image" content="{{ metadata.url }}{{ metadata.share }}">
 </head>
 
-
-
 <body>
-    <div class="centre-vertical">
-        <div class="title centre">
-            <a href="/"><img src="/img/logo.png" alt="Koinonia Logo"></a>
-            <h1>{{ title }}</h1>
-            <h2>{{ description }}</h2>
+    <div class="body">
+        <div class="container {{type}}">
+            <div class="title">
+                <a href="/"><img src="/img/logo.png" alt="Koinonia Logo" class="logo"></a>
+                <h1>{{ title }}</h1>
+                <h2>{{ description }}</h2>
+            </div>
+            <div id="main-content" class="main-content">
+                {{ content | safe }}
+            </div>
         </div>
-        {{ content | safe }}
     </div>
-    
+    <footer class="footer">
+        <div class="footer">
+            {% if links.Footer %}
+            {% for link in links.Footer %}
+            <a href="{{link.Url}}">{{ link.Title }}</a>
+            {% endfor %}
+            {% else %}
+            Copyright &copy; {{ "now" | date: "%Y" }}&nbsp;<a href="{{metadata.orgurl}}" target="_blank">Koinonia
+                Christian Fellowship</a>
+            {% endif %}
+        </div>
+    </footer>
 </body>
-
 
 </html>

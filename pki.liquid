@@ -2,8 +2,9 @@
 layout: layout.liquid
 title: Public Key Infrastructure
 description: You can find all information needed to trust Koinonia's public key infrastructure here.
+type: article
 ---
-<div class="downloads">
+<div class="article">
     {% for certificate in pki %}
     <h3>{{ certificate[1].title }}</h3>
     <p>{{ certificate[1].description }}</p>
