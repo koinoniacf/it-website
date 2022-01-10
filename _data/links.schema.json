@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Links",
+    "description": "A list of links to show on various pages.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "Home": {
+            "$ref": "#/definitions/link"
+        },
+        "Footer": {
+            "$ref": "#/definitions/link"
+        },
+        "Zoom": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "$ref": "#/definitions/link"
+                },
+                "Footer": {
+                    "$ref": "#/definitions/link"
+                }
+            }
+        }
+    },
+    "definitions": {
+        "link": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Title": {
+                        "type": "string",
+                        "description": "Where does the link go?"
+                    },
+                    "Url": {
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "Description": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Title"
+                ]
+            },
+            "uniqueKeys": [
+                "/Name"
+            ]
+        }
+    }
+}
