@@ -2,13 +2,13 @@
 layout: layout.liquid
 title: Web Resources
 description: Here you will find links to various web resources.
+type: landing
 ---
-<div class="downloads">
-    <h3></h3>
-    {% for link in links %}
-    <div class="action centre">
-        {% assign type = link[1].description %}
-        <a class="button1" href="{{link[1].url}}">{{ link[1].title }}{% if type != blank %} {{ link[1].description }}{% endif %}</a>
+<div class="links">
+    {% for link in links.Home %}
+    <div class="container">
+        <div class="link"><a class="button1" href="{{link.Url}}">{{ link.Title }}</a></div>
+        <div class="description">{{link.Description}}</div>
     </div>
     {% endfor %}
 </div>

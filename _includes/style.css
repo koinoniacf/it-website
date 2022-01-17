@@ -1,7 +1,5 @@
 body {
     font-family: sans-serif;
-    max-width: 70%;
-    min-width: 50vh;
     margin: auto;
     background-color: white;
     background-image: url("/img/BG.jpg");
@@ -9,9 +7,39 @@ body {
     background-attachment: fixed;
 }
 
-div.centre-vertical {
-    margin: 2em 0;
-    min-height: 200px;
+img.logo {
+    max-width: 100%;
+    margin-bottom: 1em;
+}
+
+div.body {
+    min-height: calc(100vh - 2em - 3em);
+    /* height - container padding - bottom margin */
+}
+
+div.body>div.container {
+    margin: auto;
+    height: fit-content;
+    padding: 2em 4em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2em;
+}
+
+
+@media (max-width: 25em) {
+    div.body>div.container {
+        padding: 6vw 3vw;
+    }
+}
+
+div.body>div.landing {
+    justify-content:center;
+}
+
+div.title>h1, div.title>h2 {
+    margin: 0;
 }
 
 div.title>h2 {
@@ -19,20 +47,11 @@ div.title>h2 {
     font-size: large;
 }
 
-div.title>h1,
-div.title>h2 {
-    margin: 0;
+div.links>.container {
+    display: flex;
+    align-items: baseline;
+    gap: .3em;
 }
-
-div.downloads>h3{
-    margin-top: 2em;
-    margin-bottom: 0em;
-}
-div.downloads>p {
-    margin-top: 0.5em;
-}
-
-.bold {font-weight: bolder;}
 
 a.button1 {
     display: inline-block;
@@ -43,15 +62,37 @@ a.button1 {
     color: #ffffff;
     background-color: #25834F;
     transition: all 0.1s;
+    min-width: 12em;
+    text-align: center;
 }
 
 a.button1:hover {
     background-color: #2D9F60;
 }
 
-@media all and (max-width:30em) {
+@media (max-width: 25em) {
     a.button1 {
-        display: block;
-        margin: 0.4em auto;
+        min-width: 18vw;
     }
+}
+
+div.footer {
+    height: 50px;
+    background-color: #25834Fee;
+    color: white;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer>a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    filter: brightness(95%);
 }
