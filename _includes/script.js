@@ -5,7 +5,7 @@ window.onload = async function load() {
         let destination = document.getElementById("destination")
         destination.value = "https://"
         destination.focus()
-        document.getElementById("ShortUrlCopy").addEventListener("click", CopyShortLink )
+        document.getElementById("ShortUrlCopy").addEventListener("click", CopyShortLink)
     }
 }
 
@@ -17,7 +17,7 @@ async function short(event) {
     //set request headers
     let requestHeaders = new Headers()
     requestHeaders.append("X-My-Request-Header", "jPgJCdVrF6VK192Ey4hH")
-    
+
     //submit request
     let response = await (await fetch("/api/short", {
         headers: requestHeaders,
@@ -39,4 +39,4 @@ async function short(event) {
 function CopyShortLink() {
     navigator.clipboard.writeText(document.getElementById("ShortUrl").placeholder) //copy placeholder to clipboard on copy
     console.log("Copying")
-  }
+}
