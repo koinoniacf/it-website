@@ -5,11 +5,11 @@ const htmlmin = require("html-minifier"); // minify HTML
 module.exports = function(eleventyConfig) {
     eleventyConfig.setBrowserSyncConfig({
         ui: false
-      });
+    });
     eleventyConfig.addPassthroughCopy("pki");
     eleventyConfig.addPassthroughCopy("img");
-    eleventyConfig.addPassthroughCopy({"images/**/*": "/img"});
-    eleventyConfig.addPassthroughCopy({"assets": "/"});
+    eleventyConfig.addPassthroughCopy({ "images/**/*": "/img" });
+    eleventyConfig.addPassthroughCopy({ "assets": "/" });
     eleventyConfig.addTransform("minify-output", async function(content, outputPath) {
         if (outputPath && outputPath.endsWith(".html")) {
             let minified = htmlmin.minify(content, {
