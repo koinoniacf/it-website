@@ -6,13 +6,17 @@ type: landing
 ---
 <div class="links">
     {% for link in links.Zoom.Body %}
-    <div class="container">
-        <div class="link"><a class="button1" href="{{link.Url}}">{{ link.Title }}</a></div>
-    </div>
+        <div class="container">
+            <div class="link">
+                <a class="button1" href="{{link.Url}}">{{ link.Title }}</a>
+            </div>
+        </div>
     {% endfor %}
     {% for link in links.Zoom.Footer %}
-    <div class="container">
-        <div class="link"><a class="button1" href="{{link.Url}}">{{ link.Title }}</a></div>
-    </div>
+        <div class="container">
+            <div class="link">
+                <a class="button1" href="{{link.Url}}">{{ link.Title }}</a>
+            </div>
+        </div>
     {% endfor %}
 </div>
