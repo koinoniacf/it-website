@@ -5,6 +5,7 @@ body {
     background-image: url("/img/BG.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 img.logo {
@@ -27,7 +28,6 @@ div.body>div.container {
     gap: 2em;
 }
 
-
 @media (max-width: 25em) {
     div.body>div.container {
         padding: 6vw 3vw;
@@ -35,10 +35,11 @@ div.body>div.container {
 }
 
 div.body>div.landing {
-    justify-content:center;
+    justify-content: center;
 }
 
-div.title>h1, div.title>h2 {
+div.title>h1,
+div.title>h2 {
     margin: 0;
 }
 
@@ -84,7 +85,6 @@ div.footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .footer>a {
