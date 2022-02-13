@@ -1,32 +1,32 @@
 {
-  "name": "koinonia-it-web",
-  "version": "1.0.0",
-  "main": ".eleventy.js",
-  "scripts": {
-    "build": "eleventy",
-    "dev": "npx wrangler pages dev --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY -- eleventy --serve",
-    "eleventy": "eleventy --serve",
-    "wrangler": "npx wrangler pages dev _site --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun",
-    "clean": "rimraf _site"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/koinoniacf/pki.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/koinoniacf/pki/issues"
-  },
-  "homepage": "https://github.com/koinoniacf/pki#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "clean-css": "^5.2.2",
-    "html-minifier": "^4.0.0",
-    "terser": "^5.9.0",
-    "wrangler": "^0.0.15"
-  },
-  "description": ""
+    "name": "koinonia-it-web",
+    "version": "1.0.0",
+    "main": ".eleventy.js",
+    "scripts": {
+        "build": "eleventy",
+        "dev": "npx wrangler pages dev --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY -- eleventy --serve",
+        "eleventy": "eleventy --serve",
+        "wrangler": "npx wrangler pages dev _site --proxy 8080 --port 8788 -b REBRANDLY_API_KEY=KEY REBRANDLY_WORKSPACE=KEY",
+        "debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun",
+        "clean": "rimraf _site"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/koinoniacf/pki.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/koinoniacf/pki/issues"
+    },
+    "homepage": "https://github.com/koinoniacf/pki#readme",
+    "devDependencies": {
+        "@11ty/eleventy": "^1.0.0",
+        "clean-css": "^5.2.2",
+        "html-minifier": "^4.0.0",
+        "terser": "^5.9.0",
+        "wrangler": "^0.0.15"
+    },
+    "description": ""
 }
