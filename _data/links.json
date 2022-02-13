@@ -1,7 +1,6 @@
 {
     "$schema": "./links.schema.json",
-    "Home": [
-        {
+    "Home": [{
             "Title": "Microsoft 365",
             "Url": "https://myapps.microsoft.com/kcf.org"
         },
@@ -35,8 +34,7 @@
         }
     ],
     "Zoom": {
-        "Body": [
-            {
+        "Body": [{
                 "Title": "Join a Meeting",
                 "Description": "Connect to a meeting in progress",
                 "Url": "https://koinoniacf.zoom.us/join"
@@ -52,8 +50,7 @@
                 "Url": "https://koinoniacf.zoom.us/signin"
             }
         ],
-        "Footer": [
-            {
+        "Footer": [{
                 "Title": "Getting Started",
                 "Url": "https://support.zoom.us/hc/en-us/sections/201728913-Joining-Starting"
             },
