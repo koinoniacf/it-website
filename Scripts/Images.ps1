@@ -1,12 +1,38 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
-    [ValidateScript( { Test-Path (Split-Path $_ ) })][string]$OutPath = (Get-Location),
-    [array]$Path = (Get-Location),
-    [ValidateScript( { Test-Path $_ })]$Json = "..\..\Images.json"
+    [ValidateSet("Banner", "All", "Logo", "Brandmark", $null)][array]$Types = "Banner",
+    [array]$Path = (Join-Path -Path (Split-Path $MyInvocation.InvocationName) -ChildPath "..\images\"),
+    [string]$OutFolder = "Resized",
+    [ValidateScript( { Test-Path $_ })]$Json = $KoinoniaIt.ConvertToOutputImages.Json
 )
-New-Item -ItemType Directory $OutPath -ErrorAction SilentlyContinue
-Get-ChildItem -Recurse $OutPath | Remove-Item -Recurse -Force
+function Initialize-OutFolder {
+    param ([string]$Path)
+    New-Item -ItemType Directory $Path -ErrorAction SilentlyContinue
+    Get-ChildItem -Recurse $Path | Remove-Item -Recurse -Force
+}
 
-ConvertTo-OutputImages -WhatIf:$WhatIfPreference -Json $Json -Destination "Web" -OutPath $OutPath -Type Logo      -Path (Get-ChildItem -Path $Path -File -Recurse -Depth 0 -Include "*Logo.png","*Word.png")
-ConvertTo-OutputImages -WhatIf:$WhatIfPreference -Json $Json -Destination "Web" -OutPath $OutPath -Type Brandmark -Path (Get-ChildItem -Path $Path -File -Recurse -Depth 0 -Include "*Brand.png","*Icon.png")
-ConvertTo-OutputImages -WhatIf:$WhatIfPreference -Json $Json -Destination "Web" -OutPath $OutPath -Type Banner    -Path (Get-ChildItem -Path $Path -File -Recurse -Depth 0 -Include "*BG.jpg","*FG.jpg")
+if ($Types -contains "Logo" -or $Types -contains "Brandmark" -or $Types -contains "All") {
+    $OutPath = Join-Path -Path $Path -ChildPath "\Logos\Resized"
+    Initialize-OutFolder -Path $OutPath
+}
+
+if ($Types -contains "Logo" -or $Types -contains "All") { 
+    ConvertTo-OutputImages -WhatIf:$WhatIfPreference -Json $Json -Destination "Web" -OutPath $OutPath -Type Logo      -Path (Get-ChildItem -Path $Path -File -Recurse -Depth 0 -Include "*Logo.png", "*Word.png")
+}
+
+if ($Types -contains "Brandmark" -or $Types -contains "All") { 
+    ConvertTo-OutputImages -WhatIf:$WhatIfPreference -Json $Json -Destination "Web" -OutPath $OutPath -Type Brandmark -Path (Get-ChildItem -Path $Path -File -Recurse -Depth 0 -Include "*Brand.png", "*Icon.png")
+}
+
+if ($Types -contains "Banner" -or $Types -contains "All") {
+    $OutPath = Join-Path -Path $Path -ChildPath "\Banners\Resized"
+    Initialize-OutFolder -Path $OutPath
+
+    ConvertTo-OutputImages -WhatIf:$WhatIfPreference -Json $Json -Destination "Web" -OutPath $OutPath -Type Banner -Path (Get-ChildItem -Path $Path -File -Recurse -Depth 0 -Include "*BG.jpg", "*FG.jpg", "Wallpaper.jpg")
+
+    $Wallpaper = Join-Path -Path $OutPath -ChildPath "Wallpaper_Windows.jpg"
+    if (Test-Path -Path $Wallpaper -PathType Leaf) {
+        Copy-Item -Path $Wallpaper -Destination (Join-Path -Path $OutPath -ChildPath "BG_Windows.jpg") -WhatIf:$WhatIfPreference
+        Remove-Item (Join-Path -Path $OutPath -ChildPath "Wallpaper_*.jpg") -WhatIf:$WhatIfPreference
+    }
+}
