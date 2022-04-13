@@ -1,19 +1,24 @@
 ---
 permalink: /_headers
 layout: null
+sitemap:
+  ignore: true
 ---
 /*
   Access-Control-Allow-Origin: *
-  Content-Security-Policy: default-src 'none' ; connect-src https://cloudflareinsights.com; img-src 'self' ; style-src 'self' ; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js;
+  Content-Security-Policy: default-src 'none' ; connect-src 'self' https://cloudflareinsights.com; img-src 'self' ; style-src 'self' ; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js;
   Permissions-Policy: document-domain=()
   Referrer-Policy: strict-origin-when-cross-origin
-  Strict-Transport-Security: max-age=1
+  Strict-Transport-Security: max-age=31536000
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
 
-/shortlink/*
-  Content-Security-Policy: default-src 'none' ; connect-src https://cloudflareinsights.com https://api.rebrandly.com; img-src 'self' ; style-src 'self' ; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js;
+/pki/* 
+  X-Robots-Tag: none, nosnippet, noarchive
+
+/assets/*
+  X-Robots-Tag: none, nosnippet, noarchive
 
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
